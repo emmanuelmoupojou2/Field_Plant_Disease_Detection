@@ -27,24 +27,31 @@ The key features of the model are:
 ## Installation
 
 Tests were performed in the following environment: python=3.9.15, tensorflow=2.11.0, torch=1.9.1 and torchvision=0.10.1
-The model can be installed and tested as follows. All the necessary libs and packages will be installed with the following commands
+The model uses [Segment Anything Model](https://github.com/facebookresearch/segment-anything) by Meta AI Research and [Fully Convolutional Data Description](https://github.com/liznerski/fcdd).
+All the necessary libs and packages will be installed with the following commands:
 
 ```bash
 # Create a new environment <env> with python=3.9.15 tensorflow=2.11.0 
-conda create -c conda-forge -n <env> python=3.9.15 tensorflow=2.11.0 
+conda create -c conda-forge -n <env> python=3.9.15 tensorflow=2.11.0
+
 # Activate the newly created environment
 conda activate <env>
+
 # Clone the repository
 git clone <repo>
+
 # Move to cloned repository
 cd <repo>
-# Install [Segment Anything Model](https://github.com/facebookresearch/segment-anything) by Meta AI Research
+
+# Install Segment Anything Model
 pip install git+https://github.com/facebookresearch/segment-anything.git
-# Install [Fully Convolutional Data Description](https://github.com/liznerski/fcdd)
+
+# Install Fully Convolutional Data Description
 git clone https://github.com/liznerski/fcdd.git
 cd fcdd/python/
 pip install .
 cd ../../
+
 #Install additional packages
 pip install imutils pandas
 ```
@@ -54,8 +61,9 @@ For better performance, the model should be run on a 8 Gb RAM
 ```bash
 # Use GPU if available
 [CUDA_VISIBLE_DEVICES=3] python predict_disease.py <plant_disease_image_path> <number_objects>
+
 #The results will show as a dictionnary:
-{'object1': 'disease1', 'object2': 'disease2', etc.}
+{'path_to_object1': 'disease1', 'path_to_object2': 'disease2', etc.}
 ```
 ## License
 
