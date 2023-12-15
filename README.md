@@ -45,32 +45,32 @@ The model uses [Segment Anything Model](https://github.com/facebookresearch/segm
 All the necessary libs and packages will be installed with the following commands:
 
 
-# Create a new environment <env> with python=3.9.15 tensorflow=2.11.0 
+### Create a new environment <env> with python=3.9.15 tensorflow=2.11.0 
 ```bash
 conda create -c conda-forge -n <env> python=3.9.15 tensorflow=2.11.0
 ```
 
-# Activate the newly created environment
+### Activate the newly created environment
 ```bash
 conda activate <env>
 ```
 
-# Clone the repository
+### Clone the repository
 ```bash
 git clone <repo>
 ```
 
-# Move to cloned repository
+### Move to cloned repository
 ```bash
 cd <repo>
 ```
 
-# Install Segment Anything Model
+### Install Segment Anything Model
 ```bash
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
-# Install Fully Convolutional Data Description
+### Install Fully Convolutional Data Description
 ```bash
 git clone https://github.com/liznerski/fcdd.git
 cd fcdd/python/
@@ -78,7 +78,7 @@ pip install .
 cd ../../
 ```
 
-# Install additional packages
+### Install additional packages
 ```bash
 pip install imutils pandas
 ```
