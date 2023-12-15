@@ -71,7 +71,7 @@ pip install imutils pandas
 ```
 ## Usage
 
-For better performance, the model should be run on a 8 Gb RAM
+For better performance, the model should be run on a 16 Gb RAM
 ```bash
 # Use GPU if available
 [CUDA_VISIBLE_DEVICES=3] python predict_disease.py <plant_disease_image_path> <number_objects>
