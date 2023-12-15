@@ -31,5 +31,4 @@ Provide instructions on how to install and set up your project. Include any depe
 npm install your-package
 
 
-```markdown
 ![Model workflow](moupo25.PNG)
