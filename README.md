@@ -58,19 +58,15 @@ conda activate <env>
 ### Clone the repository
 ```bash
 git clone <repo>
-```
-
-### Move to cloned repository
-```bash
 cd <repo>
 ```
 
-### Install Segment Anything Model
+### Install [Segment Anything Model](https://github.com/facebookresearch/segment-anything)
 ```bash
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
-### Install Fully Convolutional Data Description
+### Install [Fully Convolutional Data Description](https://github.com/liznerski/fcdd)
 ```bash
 git clone https://github.com/liznerski/fcdd.git
 cd fcdd/python/
