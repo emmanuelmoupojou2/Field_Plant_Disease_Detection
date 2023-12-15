@@ -1,6 +1,6 @@
 # Field Plant Disease Detection
 
-A model ensemble solution for plant disease detection in field images, addressing challenges faced by existing models. Leveraging the [Segment Anything Model](https://github.com/facebookresearch/segment-anything), Image Processing techniques, and [Fully Convolutional Data Description](https://github.com/liznerski/fcdd), the proposed model achieves a 15% improvement in validation accuracies on field plant datasets like PlantDoc. It provides an accurate and practical tool for identifying and classifying multiple diseases in a single-field plant image.
+A model ensemble solution for plant disease detection in field images, addressing challenges faced by existing models. Leveraging the [Segment Anything Model](https://github.com/facebookresearch/segment-anything), Image Processing techniques, and [Fully Convolutional Data Description](https://github.com/liznerski/fcdd). The proposed model achieves a 15% improvement in validation accuracies on field plant datasets like PlantDoc. It provides an accurate and practical tool for identifying and classifying multiple diseases in a single-field plant image.
 
 # Table of Contents
 
@@ -39,7 +39,9 @@ The key features of the model are:
 ## Installation
 
 Tests were performed in the following environment: python=3.9.15, tensorflow=2.11.0, torch=1.9.1 and torchvision=0.10.1
+
 The model uses [Segment Anything Model](https://github.com/facebookresearch/segment-anything) by Meta AI Research and [Fully Convolutional Data Description](https://github.com/liznerski/fcdd).
+
 All the necessary libs and packages will be installed with the following commands:
 
 ```bash
