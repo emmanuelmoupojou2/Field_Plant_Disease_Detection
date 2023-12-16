@@ -47,22 +47,16 @@ All the necessary libs and packages will be installed with the following command
 
 ### Create a new environment <env> with python=3.9.15 tensorflow=2.11.0 
 ```bash
-conda create -c conda-forge -n <env> python=3.9.15 tensorflow=2.11.0
+conda create -c conda-forge -n env python=3.9.15 tensorflow=2.11.0
+
+conda activate env
 ```
 
-### Activate the newly created environment
-```bash
-conda activate <env>
-```
-
-### Clone the repository
+### Clone the repository and Install [Segment Anything Model](https://github.com/facebookresearch/segment-anything)
 ```bash
 git clone <repo>
 cd <repo>
-```
 
-### Install [Segment Anything Model](https://github.com/facebookresearch/segment-anything)
-```bash
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
