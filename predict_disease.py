@@ -180,7 +180,6 @@ def segment_and_predict(filepath, leaves_to_use):
 
 
 if __name__ == "__main__":
-    print("in the main...")
     filepath, leaves_to_use = sys.argv[1], int(sys.argv[2])
     print(segment_and_predict(filepath, leaves_to_use))
 
