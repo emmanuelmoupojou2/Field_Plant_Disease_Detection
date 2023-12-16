@@ -89,4 +89,4 @@ For better performance, the model should be run on 16 GB RAM
 ```
 ## License
 
-The project is open source and distributed under the [MIT License](https://chat.openai.com/c/LICENSE)
+The project is open source and distributed under the [MIT License](https://github.com/emmanuelmoupojou2/Field_Plant_Disease_Detection/tree/main?tab=MIT-1-ov-file)
