@@ -41,11 +41,6 @@ import itertools
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
-print(python_version())
-print(tf.__version__)
-print(tf.keras.__version__)
-print(mp.__version__)
-
 global weights_file
 weights_file = "model_weights/global_mobilenet_pv_pv_white.h5"
 global model_file
@@ -62,7 +57,6 @@ def predict_disease(test_directory):
     global inference_model
 
     if(inference_model==None):
-        print("Initializing inference model...")
         # load json and create model
         json_file = open(model_file, 'r')
         loaded_model_json = json_file.read()
@@ -73,7 +67,6 @@ def predict_disease(test_directory):
         print("Loaded model from disk")
 
     predict_datagen = ImageDataGenerator()
-    print("test_directory", test_directory)
     if os.path.isdir(test_directory):
         test_generator = predict_datagen.flow_from_directory(
                     #base_path + 'test/',
@@ -105,12 +98,8 @@ def predict_disease(test_directory):
                    'Tomato___healthy']
 
     pred_test = inference_model.predict(test_generator)
-    #print("raw prediction without max = ", type(pred_test), pred_test)
     pred_test = np.argmax(pred_test, axis=1)
 
-    #print("raw prediction = ", type(pred_test), pred_test)
-    #print("test_generator.filenames = ", type(test_generator.filenames), test_generator.filenames)
     pred_test = [class_labels[i] for i in pred_test.tolist()]
-    #print("predicted labels = ", type(pred_test), pred_test)
 
     return pred_test
