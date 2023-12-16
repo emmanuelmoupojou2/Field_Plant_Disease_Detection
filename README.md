@@ -78,14 +78,19 @@ cd ../../
 ```bash
 pip install imutils pandas
 ```
+
+### Complete installation with SAM's weights
+
+Download the [Segment Anything Model's checkpoint](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)s in the folder model_weights.
+
 ## Usage
 
-For better performance, the model should be run on a 16 Gb RAM
+For better performance, the model should be run on 16 GB RAM
 ```bash
 # Use GPU if available
 [CUDA_VISIBLE_DEVICES=3] python predict_disease.py <plant_disease_image_path> <number_objects>
 
-#The results will show as a dictionnary:
+#The results will show as a dictionary:
 {'path_to_object1': 'disease1', 'path_to_object2': 'disease2', etc.}
 ```
 ## License
