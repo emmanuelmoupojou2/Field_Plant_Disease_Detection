@@ -73,7 +73,7 @@ cd ../../
 pip install imutils pandas
 ```
 
-### Complete installation with SAM's weights
+### Complete installation with SAM's checkpoint
 
 Download the [Segment Anything Model's checkpoint](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)s in the folder model_weights.
 
