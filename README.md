@@ -76,7 +76,9 @@ pip install imutils pandas
 ### Complete installation with SAM's checkpoint
 
 Download the [Segment Anything Model's checkpoint](https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth)s in the folder model_weights.
-
+```bash
+curl -l "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth">model_weights/sam_vit_h_4b8939.pth
+```
 ## Usage
 
 For better performance, the model should be run on 16 GB RAM
