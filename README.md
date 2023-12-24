@@ -44,6 +44,13 @@ The model uses [Segment Anything Model](https://github.com/facebookresearch/segm
 
 All the necessary libs and packages will be installed with the following commands:
 
+### Prerequisites
+1. Check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
+
+2. Install python3-opencv if not available
+```bash
+sudo apt-get install python3-opencv
+```
 
 ### Create a new environment <env> with python=3.9.15 tensorflow=2.11.0 
 ```bash
