@@ -31,6 +31,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 import cv2
 from PIL import Image, ImageFile
+import torch
 
 ImageFile.LOAD_TRUNCATED_IMAGES = True
 
@@ -148,7 +149,9 @@ def segment_and_predict(filepath, leaves_to_use):
     if (generator == None):
         print("Loading model in segment_and_predict...")
         sam = sam_model_registry["vit_h"](checkpoint="model_weights/sam_vit_h_4b8939.pth")
-        _ = sam.to(device="cuda")
+        DEVICE = torch.device('cuda:0' if torch.cuda.is_available() else 'cpu')
+        print("Device = ", DEVICE)
+        sam = sam.to(device=DEVICE)
         generator = SamAutomaticMaskGenerator(sam)
 
     current_working_directory = os.getcwd()
@@ -168,9 +171,9 @@ def segment_and_predict(filepath, leaves_to_use):
 
     image = cv2.imread(filepath)
     if image is None:
-        print(f"Could not load '{filepath}' as an image, skipping...")
     else:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+        
         masks = generator.generate(image)
 
         return save_largest_green_region(masks, filepath, output_directory, os.path.basename(filepath),
@@ -178,7 +181,7 @@ def segment_and_predict(filepath, leaves_to_use):
                                          1,
                                          leaves_to_use)
 
-
+        
 if __name__ == "__main__":
     filepath, leaves_to_use = sys.argv[1], int(sys.argv[2])
     print(segment_and_predict(filepath, leaves_to_use))

@@ -6,6 +6,7 @@ from fcdd.models.fcdd_cnn_224 import FCDD_CNN224_VGG_F
 from fcdd.datasets.image_folder import ImageFolder
 from fcdd.datasets.preprocessing import local_contrast_normalization
 from fcdd.util.logging import Logger
+import torch
 
 global inference_model
 inference_model=None
@@ -14,10 +15,9 @@ def predict(images_path):
 
     global inference_model
 
-    #All backgrounds are used for training - 97.93% accuracy
     snapshot = "model_weights/snapshot.pt"
 
-    net = FCDD_CNN224_VGG_F((3, 224, 224), bias=True).cuda()
+    net = FCDD_CNN224_VGG_F((3, 224, 224), bias=True).cuda() if torch.cuda.is_available() else FCDD_CNN224_VGG_F((3, 224, 224), bias=True).cpu()
 
     normal_class = 0
 
@@ -47,7 +47,7 @@ def predict(images_path):
         sample_fname, _ = loader.dataset.samples[i]
         all_file_names.append(sample_fname)
         i = i + 1
-        inputs = inputs.cuda()
+        inputs = inputs.cuda() if torch.cuda.is_available() else  inputs.cpu()
         with torch.no_grad():
             outputs = inference_model.net(inputs)
             anomaly_scores = inference_model.anomaly_score(inference_model.loss(outputs, inputs, labels, reduce='none'))
@@ -68,5 +68,6 @@ def predict(images_path):
         result[file] = score
     sorted_result = dict(sorted(result.items(), key=lambda item: item[1]))
 
+    
     return sorted_result
 
