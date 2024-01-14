@@ -171,6 +171,7 @@ def segment_and_predict(filepath, leaves_to_use):
 
     image = cv2.imread(filepath)
     if image is None:
+        print(f"Could not load '{filepath}' as an image, skipping...")
     else:
         image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
         
