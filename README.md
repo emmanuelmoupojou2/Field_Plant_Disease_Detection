@@ -45,9 +45,7 @@ The model uses [Segment Anything Model](https://github.com/facebookresearch/segm
 All the necessary libs and packages will be installed with the following commands:
 
 ### Prerequisites
-1. Check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx
-
-2. Install python3-opencv if not available
+Install python3-opencv if not available
 ```bash
 sudo apt-get install python3-opencv
 ```
@@ -61,23 +59,17 @@ conda activate env
 
 ### Clone the repository and Install [Segment Anything Model](https://github.com/facebookresearch/segment-anything)
 ```bash
-git clone <repo>
-cd <repo>
+git clone https://github.com/emmanuelmoupojou2/Field_Plant_Disease_Detection.git
+cd Field_Plant_Disease_Detection
 
 pip install git+https://github.com/facebookresearch/segment-anything.git
 ```
 
 ### Install [Fully Convolutional Data Description](https://github.com/liznerski/fcdd)
 ```bash
-git clone https://github.com/liznerski/fcdd.git
 cd fcdd/python/
 pip install .
 cd ../../
-```
-
-### Install additional packages
-```bash
-pip install imutils pandas
 ```
 
 ### Complete installation with SAM's checkpoint
@@ -88,10 +80,9 @@ curl -l "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth">m
 ```
 ## Usage
 
-For better performance, the model should be run on 16 GB RAM
 ```bash
-# Use GPU if available
-[CUDA_VISIBLE_DEVICES=3] python predict_disease.py <plant_disease_image_path> <number_objects>
+#Predict plant disease from field image
+python predict_disease.py <plant_disease_image_path> <number_objects>
 
 #The results will show as a dictionary:
 {'path_to_object1': 'disease1', 'path_to_object2': 'disease2', etc.}
