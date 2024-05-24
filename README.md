@@ -98,7 +98,10 @@ python predict_disease.py <plant_disease_image_path> <number_objects>
  - model_file: Path to your .json custom model
 ```
 
-* The FCDD component can be further trained with custom dataset as described [here](https://github.com/liznerski/fcdd#custom-data)
+* The FCDD component can be further trained with custom dataset as described [here](https://github.com/liznerski/fcdd#custom-data). After training, update the file run_prediction_with_snapshot.py as follows:
+```bash
+ - snapshot : Path to the .pt snapshot file obtained after your custom training
+```  
   
 * The SAM component has been trained on a dataset of 11 million images and 1.1 billion masks, and has strong zero-shot performance on a variety of segmentation tasks.
 
