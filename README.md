@@ -78,6 +78,7 @@ Download the [Segment Anything Model's checkpoint](https://dl.fbaipublicfiles.co
 ```bash
 curl -l "https://dl.fbaipublicfiles.com/segment_anything/sam_vit_h_4b8939.pth">model_weights/sam_vit_h_4b8939.pth
 ```
+
 ## Usage
 
 ```bash
@@ -87,6 +88,18 @@ python predict_disease.py <plant_disease_image_path> <number_objects>
 #The results will show as a dictionary:
 {'path_to_object1': 'disease1', 'path_to_object2': 'disease2', etc.}
 ```
+
+## Custom Training
+
+*The final inference is done using the file classification.py that uses a default Mobilenet model and weights. You can train a different model with different dataset for this final classification. After your custom training, you should perform the following updates in classification.py:
+
++ _weights_file_ : Path to the .h5 weights file saved after your custom training
++ _model_file_: Path to your .json custom model
+
+* The FCDD component can be further trained with custom dataset as described [here](https://github.com/liznerski/fcdd#custom-data)
+  
+* The SAM component has been trained on a dataset of 11 million images and 1.1 billion masks, and has strong zero-shot performance on a variety of segmentation tasks.
+
 ## License
 
 The project is open source and distributed under the [MIT License](https://github.com/emmanuelmoupojou2/Field_Plant_Disease_Detection/tree/main?tab=MIT-1-ov-file)
