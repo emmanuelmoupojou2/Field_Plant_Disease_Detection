@@ -92,9 +92,11 @@ python predict_disease.py <plant_disease_image_path> <number_objects>
 ## Custom Training
 
 * The final inference is done using the file classification.py that uses a default Mobilenet model and weights. You can train a different model with different dataset for this final classification. After your custom training, you should perform the following updates in classification.py:
-
+```bash
  _weights_file_ : Path to the .h5 weights file saved after your custom training
+
  _model_file_: Path to your .json custom model
+```
 
 * The FCDD component can be further trained with custom dataset as described [here](https://github.com/liznerski/fcdd#custom-data)
   
